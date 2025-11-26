@@ -21,17 +21,24 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @forelse ($data as $row)
                     <tr>
-                        <td>1</td>
-                        <td>Pr001</td>
-                        <td>Mie</td>
-                        <td>15000</td>
-                        <td>Ini Mie</td>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $row->kode_produk }}</td>
+                        <td>{{ $row->nama_produk }}</td>
+                        <td>{{ $row->harga }}</td>
+                        <td>{{ $row->deskripsi }}</td>
                         <td>
-                            <a href="#" class="btn btn-warning btn-sm">Edit</a>
-                            <a href="#" class="btn btn-danger btn-sm" onclick="return confirm('Hapus data ini?')">Hapus</a>
+                            <a href="#" class="btn btn-warning">Edit</a>
+                            <a href="#" class="btn btn-danger">Hapus</a>
                         </td>
                     </tr>
+                    @empty
+                    <tr>
+                        <td colspan="6" class="text-center">Data Kosong</td>
+                    </tr>
+                    @endforelse
+
                 </tbody>
             </table>
         </div>
