@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ExamplesController;
+use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -15,6 +16,6 @@ Route::get('/example/delete/{id}', [ExamplesController::class, 'destroy'])->name
 
 
 
-Route::get('/produk', function () {
-    return view('produk.index');
-});
+
+
+Route::get('/produk', [ProdukController::class, 'index'])->name('produk.index');

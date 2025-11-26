@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 
 class ProdukController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $data = ProdukModel::all();
-        return view('', compact('data'));
+        return view('produk.index', compact('data'));
     }
 }
