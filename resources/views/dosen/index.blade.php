@@ -25,10 +25,18 @@
                         <td>{{ $d->nama }}</td>
                         <td>{{ $d->nidn }}</td>
                         <td>{{ $d->alamat }}</td>
-                        <td>
+                       <td>
                             <a href="{{ route('dosen.edit', $d->id) }}" class="btn btn-warning">Edit</a>
-                            <a href="{{ route('dosen.delete', $d->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Hapus data ini?')">Hapus</a>
+
+                            <form action="{{ route('dosen.delete', $d->id) }}" method="POST" style="display:inline-block;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Hapus data ini?')">
+                                    Hapus
+                                </button>
+                            </form>
                         </td>
+
                     </tr>
                 @empty
                     <tr>
