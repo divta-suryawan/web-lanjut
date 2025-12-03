@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container mt-4">
-    <a href="#" class="btn btn-primary mb-3">Tambah Data</a>
+    <a href="{{ route('dosen.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
     <div class="card">
         <div class="card-body">
             <table class="table table-bordered table-striped">

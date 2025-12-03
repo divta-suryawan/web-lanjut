@@ -12,4 +12,21 @@ class DosenController extends Controller
         $data = DosenModel::all();
         return view('dosen.index', compact('data'));
     }
+
+    public function create()
+    {
+        return view('dosen.create');
+    }
+
+    public function store(Request $request)
+    {
+        DosenModel::create($request->all());
+        return redirect()->route('dosen.index')->with('success', 'Data berhasil ditambahkan!');
+    }
+
+
+
+
+
+    
 }

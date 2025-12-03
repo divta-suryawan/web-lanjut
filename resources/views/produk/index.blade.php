@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="container mt-4">
-    <a href="#" class="btn btn-primary mb-3">Tambah Data</a>
+    <a href="{{ route('produk.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
     <div class="card">
         <div class="card-body">
             <table class="table table-bordered table-striped">
@@ -29,7 +29,8 @@
                         <td>{{ $d->harga }}</td>
                         <td>{{ $d->deskripsi }}</td>
                         <td>
-                            <a href="#" class="btn btn-warning">Edit</a>
+                            <a href="{{ route('produk.edit' , $d->id) }}" class="btn btn-warning">Edit</a>
+
                             <a href="#" class="btn btn-danger">Hapus</a>
                         </td>
                     </tr>

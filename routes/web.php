@@ -8,8 +8,8 @@ use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/dosen', [DosenController::class, 'index'])->name('dosen.index');
-
-
+Route::get('/dosen/create', [DosenController::class, 'create'])->name('dosen.create');
+Route::post('/dosen/store', [DosenController::class, 'store'])->name('dosen.store');
 
 
 
@@ -32,3 +32,6 @@ Route::get('/example/delete/{id}', [ExamplesController::class, 'destroy'])->name
 
 
 Route::get('/produk', [ProdukController::class, 'index'])->name('produk.index');
+Route::get('/create', [ProdukController::class, 'create'])->name('produk.create');
+Route::post('/store', [ProdukController::class, 'store'])->name('produk.store');
+Route::get('/edit/{id}', [ProdukController::class, 'edit'])->name('produk.edit');
