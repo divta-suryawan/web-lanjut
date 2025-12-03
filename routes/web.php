@@ -11,9 +11,9 @@ Route::get('/dosen', [DosenController::class, 'index'])->name('dosen.index');
 Route::get('/dosen/create', [DosenController::class, 'create'])->name('dosen.create');
 Route::post('/dosen/store', [DosenController::class, 'store'])->name('dosen.store');
 
-
-
-
+Route::get('/dosen/edit/{id}', [DosenController::class, 'edit'])->name('dosen.edit');
+Route::post('/dosen/update/{id}', [DosenController::class, 'update'])->name('dosen.update');
+Route::delete('/dosen/delete/{id}', [DosenController::class, 'destroy'])->name('dosen.delete');
 
 
 

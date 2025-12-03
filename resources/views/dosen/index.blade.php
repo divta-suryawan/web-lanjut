@@ -26,8 +26,8 @@
                         <td>{{ $d->nidn }}</td>
                         <td>{{ $d->alamat }}</td>
                         <td>
-                            <a href="#" class="btn btn-warning">Edit</a>
-                            <a href="#" class="btn btn-danger">Hapus</a>
+                            <a href="{{ route('dosen.edit', $d->id) }}" class="btn btn-warning">Edit</a>
+                            <a href="{{ route('dosen.delete', $d->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Hapus data ini?')">Hapus</a>
                         </td>
                     </tr>
                 @empty

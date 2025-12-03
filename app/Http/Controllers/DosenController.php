@@ -24,9 +24,24 @@ class DosenController extends Controller
         return redirect()->route('dosen.index')->with('success', 'Data berhasil ditambahkan!');
     }
 
+    public function edit($id)
+    {
+        $data = DosenModel::find($id);
+        return view('dosen.edit', compact('data'));
+    }
 
+    public function update(Request $request, $id)
+    {
+        $data = DosenModel::find($id);
+        $data->update($request->all());
+        return redirect()->route('dosen.index')->with('success', 'Data berhasil diupdate!');
+    }
 
+    public function destroy($id)
+    {
+        $data = DosenModel::findOrFail($id);
+        $data->delete();
 
-
-    
+        return redirect()->route('dosen.index')->with('success', 'Data berhasil dihapus!');
+    }
 }
