@@ -26,7 +26,7 @@
                         <td>{{ $d->nidn }}</td>
                         <td>{{ $d->alamat }}</td>
                        <td>
-                            <a href="{{ route('dosen.edit', $d->id) }}" class="btn btn-warning">Edit</a>
+                            <a href="{{ route('dosen.edit', $d->id) }}" class="btn btn-sm btn-warning">Edit</a>
 
                             <form action="{{ route('dosen.delete', $d->id) }}" method="POST" style="display:inline-block;">
                                 @csrf
